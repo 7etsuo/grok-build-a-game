@@ -1,4 +1,8 @@
-# build-a-game
+# Grok Build game skills
+
+Two Grok Build skills: `build-a-game` and `animate-sprites`.
+
+## build-a-game
 
 A Grok Build skill. Run `/build-a-game`, give it a game idea, and Grok Build designs and builds a 2D Godot 4 game one playable step at a time, the same way LUNAR AGE was built in the video below.
 
@@ -35,3 +39,19 @@ Video: [grok-build-lunar-age.mp4](https://github.com/7etsuo/grok-build-a-game/re
 - Finishes with a look pass, a game feel pass and a 60 second attract mode.
 
 The sprite check needs Python 3 (standard library only).
+
+## animate-sprites
+
+Run `/animate-sprites` in a game folder and Grok Build animates your unit sprites with Grok Imagine. It makes a short video of each unit instead of drawing frames one by one: walks that loop, firing and death animations, packed into sprite-sheet strips the game plays at each unit's real speed.
+
+[![Animate your game with Grok Imagine](thumbnail_animate.png)](https://github.com/7etsuo/grok-build-a-game/releases/download/v2/grok-animate-sprites.mp4)
+
+Video: [grok-animate-sprites.mp4](https://github.com/7etsuo/grok-build-a-game/releases/download/v2/grok-animate-sprites.mp4) (4:17, 1080p)
+
+Install it the same way:
+
+```
+cp -r grok-build-a-game/animate-sprites ~/.grok/skills/
+```
+
+`animate-sprites/scripts/check_strips.py` checks any folder of sprite strips and fails on the mistakes the video shows: background color left on the edges or smeared inside the motion, feet floating above the shadow, frames cut off at the edge, baked-in shadows, and holes eaten into a unit that shares the background color. `suggest` picks a background color far from each unit's own colors (the purple brute in the video needed green, not magenta). Needs Python 3 with Pillow and NumPy.
